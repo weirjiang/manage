@@ -63,8 +63,9 @@ public abstract class BaseDao<T> {
         return em.find(entityClass, id);
     }
     @Transactional
-    public void save(T entity) {
+    public T save(T entity) {
     	em.persist(entity);
+    	return entity;
     }
     
     @Transactional
